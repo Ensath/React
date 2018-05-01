@@ -63,7 +63,19 @@ for(let i = 0; i < temLens.length; i++){
   zoomedOutLabels[i].style.textAlign = 'center';
 }
 
+class Label extends Component {
+  render(name) {
+    return (
+      <p>{name}</p>
+    )
+  }
+}
+
 class App extends Component {
+  renderLabel(name){
+    return <Label />
+  }
+
   render() {
     return (
       <div className="App">
@@ -75,6 +87,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <p>Electron Gun</p>
+        {this.renderLabel('Gun lens')}
       </div>
     );
   }
